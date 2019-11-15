@@ -34,4 +34,31 @@ ggplot(diabetes_clean, aes(glyhb_star)) + geom_histogram()
 diabetes_clean %>% group_by(frame) %>% summarise(mean.glyhb = mean(glyhb_star))
 ```
 
+```{r}
+diabetes_clean %>% group_by(frame,location) %>% summarise (mean.glyhb_star= mean(glyhb_star))
 
+ggplot(diabetes_clean, aes(x=location)) + geom_bar() + facet_wrap(~frame) + ggtitle("Frame Size and Location")
+
+```
+```{r}
+ggplot(diabetes_clean,aes(y=hip,x=waist,alpha=0.5)) + geom_col() + facet_wrap(~frame) + ggtitle("Waist to Hip Ratio by Frame Size")
+
+```
+
+
+
+```{r}
+fit = lm(glyhb_star ~stab.glu + age + waist + ratio+ factor(frame),data=diabetes_clean)
+ summary(fit)
+
+```
+
+F-statistic = 36.48
+Adj. R squared = 0.3683
+
+Based on high p - values, low R-squared, and high error, a linear model is not appropriate for this data. 
+High p - values indicate insignificant indicators.
+
+
+
+An inference is a conclusion made after data analysis is conducted, usually based on the results. A prediction is made before analysis and is based on less evidence than an inference.
