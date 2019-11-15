@@ -44,7 +44,9 @@ ggplot(diabetes_clean, aes(x=location)) + geom_bar() + facet_wrap(~frame) + ggti
 ggplot(diabetes_clean,aes(y=hip,x=waist,alpha=0.5)) + geom_col() + facet_wrap(~frame) + ggtitle("Waist to Hip Ratio by Frame Size")
 
 ```
+**Gather and Spread**
 
+The Gather command reshapes data from a wide format to a long format. The Spread command does the opposite, reshaping data from a long format to a wide format. This makes the 2 commands complements of each other since they are inversely proportional.
 
 
 ```{r}
