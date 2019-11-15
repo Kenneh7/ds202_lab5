@@ -60,8 +60,17 @@ Based on high p - values, low R-squared, and high error, a linear model is not a
 High p - values indicate insignificant indicators.
 
 
+When all other variables are 0, we predict the Glycosolated Hemoglobin to be 0.83.
+We predict Glycosolated Hemoglobin to increase by 1 when stable glucose increases by 0.004
+For each 0.003 years of age of the patient, we predict Glycosolated Hemoglobin to increase by 1.
+For each inch on patient's waist, we predict Glycosolated Hemoglobin to increase by 1.
+when hip to waist ratio increases by 0.02, we predict Glycosolated Hemoglobin to increase by 1.
+With a medium frame, we predict Glycosolated Hemoglobin to increase by 0.0300.
+With a small frame, we predict Glycosolated Hemoglobin to increase by 0.013.
 
 An inference is a conclusion made after data analysis is conducted, usually based on the results. A prediction is made before analysis and is based on less evidence than an inference.
 
 
-A linear regression model is simple and quick. For many datasets, it can be accurate enough. However, a KNN 
+A linear regression model is simple and quick. For many datasets, it can be accurate enough. However, a KNN regression can be more accurate in many cases, but is far more complicated and requires more time to compile and run.
+
+Largely, our views have not changed much on data science. We still believe it is the aquisition, cleaning, predicting, and presenting of data using a variety of software tools. The variety of interactive graphs we were shown in class were the most surprising to us. We found the cleaning and dataframe manipulation to be most challenging, as lining up columns for joining can be tricky. Finally, we found graphing and displays to be most enjoyable, as it turns plaintext data into stunning visual displays that can be much easier to decipher.
