@@ -1,0 +1,15 @@
+---
+title: "Team"
+author: "Kenneth Mendoza"
+date: "November 13, 2019"
+output: html_document
+---
+
+```{r data}
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+df = read.table('diabetes.txt',header=TRUE)
+df$frame = str_replace
+```
+
