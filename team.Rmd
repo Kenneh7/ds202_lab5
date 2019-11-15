@@ -22,7 +22,16 @@ diabetes_reduced = subset(df, select = -c(1, 15:16))
 
 is.na(diabetes_clean)
 ```
+
 ```{r plot}
-glyhb_star = ggplot(diabetes_clean, aes(sqrt(glyhb))) + geom_histogram(bins = 3)
+summary(diabetes_clean$glyhb)
+as.factor(diabetes_clean$glyhb)
+diabetes_clean$glyhb_star[diabetes_clean$glyhb<4.4] = 1
+diabetes_clean$glyhb_star[diabetes_clean$glyhb>=4.4 & diabetes_clean$glyhb <4.9 ] = 2
+diabetes_clean$glyhb_star[diabetes_clean$glyhb>=4.9 & diabetes_clean$glyhb <5.7 ] = 3
+diabetes_clean$glyhb_star[diabetes_clean$glyhb>5.7 & diabetes_clean$glyhb <17 ] = 4
+ggplot(diabetes_clean, aes(glyhb_star)) + geom_histogram()
+diabetes_clean %>% group_by(frame) %>% summarise(mean.glyhb = mean(glyhb_star))
 ```
+
 
