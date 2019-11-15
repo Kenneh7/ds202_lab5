@@ -4,7 +4,9 @@ author: "Kenneth Mendoza"
 date: "November 13, 2019"
 output: html_document
 ---
+***
 
+**Processing Data**
 ```{r data}
 library(ggplot2)
 library(tidyr)
@@ -22,7 +24,11 @@ diabetes_reduced = subset(df, select = -c(1, 15:16))
 
 is.na(diabetes_clean)
 ```
+By using is.na, we can check if all na values were dropped from the data set. All values should show as FALSE since there are no na values in "diabetes_clean"
 
+***
+
+**Exploring and transforming data**
 ```{r plot}
 summary(diabetes_clean$glyhb)
 as.factor(diabetes_clean$glyhb)
@@ -33,7 +39,11 @@ diabetes_clean$glyhb_star[diabetes_clean$glyhb>5.7 & diabetes_clean$glyhb <17 ] 
 ggplot(diabetes_clean, aes(glyhb_star)) + geom_histogram()
 diabetes_clean %>% group_by(frame) %>% summarise(mean.glyhb = mean(glyhb_star))
 ```
+Glyhb was fixed by turning it into a factor and separating levels based on the 5 number summary. Some downsides to the approach are that the levels of factors are not equally distributed, this was done so that the histogram is symmetrical.
 
+***
+
+<<<<<<< HEAD
 ```{r}
 diabetes_clean %>% group_by(frame,location) %>% summarise (mean.glyhb_star= mean(glyhb_star))
 
@@ -62,3 +72,8 @@ High p - values indicate insignificant indicators.
 
 
 An inference is a conclusion made after data analysis is conducted, usually based on the results. A prediction is made before analysis and is based on less evidence than an inference.
+=======
+**Gather and Spread**
+
+The Gather command reshapes data from a wide format to a long format. The Spread command does the opposite, reshaping data from a long format to a wide format. This makes the 2 commands complements of each other since they are inversely proportionate.
+>>>>>>> 1ead74d5e759de7ff05128cd86346eaca1d0fb9f
